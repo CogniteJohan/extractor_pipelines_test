@@ -1,0 +1,28 @@
+
+logger:
+    console:
+        level: INFO
+
+cognite:
+    # Read these from environment variables
+    host: ${COGNITE_BASE_URL}
+    project: ${COGNITE_PROJECT}
+
+    extraction-pipeline:
+        external-id: first_test
+
+    idp-authentication:
+        token-url: ${COGNITE_TOKEN_URL}
+
+        client-id: ${COGNITE_CLIENT_ID}
+        secret: ${COGNITE_CLIENT_SECRET}
+        scopes:
+            - ${COGNITE_BASE_URL}/.default
+
+tcp:
+    socket_port: 10110
+    max_bucket_size: 5024
+    time_series_prefix: ext_pip_test
+    upload_interval: 1
+    max_queue_length: 2500
+    data_set_ext_id: extractor_pipelines_test            
